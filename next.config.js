@@ -1,10 +1,9 @@
 /** @type {import('next').NextConfig} */
-const isProd = process.env.NODE_ENV === "production";
 
 const nextConfig = {
   reactStrictMode: true,
-  basePath: isProd ? "/Project-Website" : "",
-  assetPrefix: isProd ? "/Project-Website/" : ""
+  basePath: "/Project-Website",
+  assetPrefix: "/Project-Website/"
 };
 
 module.exports = nextConfig;
