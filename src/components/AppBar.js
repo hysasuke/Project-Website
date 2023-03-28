@@ -5,7 +5,6 @@ import {
   Toolbar,
   Typography
 } from "@mui/material";
-import logo from "@/assets/images/logo.png";
 import Image from "next/image";
 export default function AppBar(props) {
   return (
@@ -20,7 +19,7 @@ export default function AppBar(props) {
       <Container maxWidth={"xl"}>
         <Toolbar disableGutters>
           <Image
-            src={logo}
+            src={"/logo.png"}
             width={50}
             height={50}
             style={{ marginRight: 10 }}

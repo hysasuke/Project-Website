@@ -1,7 +1,6 @@
 import { Button, Container, Grid, Typography } from "@mui/material";
 import React from "react";
 import AppBar from "./AppBar.js";
-import HeroImage from "@/assets/images/main_hero.png";
 import Image from "next/image.js";
 
 export default function Main(props) {
@@ -66,7 +65,7 @@ export default function Main(props) {
         </Grid>
         <Grid xs={6} sm={6} alignItems={"center"} display={"flex"}>
           <Image
-            src={HeroImage}
+            src={"/main_hero.png"}
             style={{ width: 2649 / 2, height: 2000 / 2 }}
           />
         </Grid>
