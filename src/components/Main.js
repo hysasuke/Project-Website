@@ -65,7 +65,7 @@ export default function Main(props) {
         </Grid>
         <Grid xs={6} sm={6} alignItems={"center"} display={"flex"}>
           <Image
-            src={"/main_hero.png"}
+            src={"/Project-Website/main_hero.png"}
             style={{ width: 2649 / 2, height: 2000 / 2 }}
           />
         </Grid>
