@@ -4,7 +4,8 @@ import { Inter } from "next/font/google";
 import Main from "@/components/Main";
 import { CssBaseline } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-
+import Intro from "@/components/Intro";
+import AppBar from "@/components/AppBar";
 const theme = createTheme({
   palette: {
     primary: {
@@ -35,7 +36,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <AppBar />
       <Main />
+      <Intro />
     </ThemeProvider>
   );
 }

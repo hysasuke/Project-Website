@@ -19,7 +19,6 @@ export default function Main(props) {
     setWindowWidth(window.innerWidth);
     setWindowHeight(window.innerHeight);
   }, []);
-  console.log("theme", theme);
   return (
     <Container
       maxWidth={false}
@@ -28,10 +27,10 @@ export default function Main(props) {
         height: "100vh",
         backgroundColor: "rgb(22,28,36)",
         display: "flex",
-        flexDirection: "column"
+        flexDirection: "column",
+        scrollSnapAlign: "start"
       }}
     >
-      <AppBar />
       <Grid container flex={1} padding={10}>
         <Grid
           xs={12}

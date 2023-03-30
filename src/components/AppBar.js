@@ -12,7 +12,7 @@ export default function AppBar(props) {
       style={{
         boxShadow: "none",
         backgroundColor: "transparent",
-        backdropFilter: "blur(2px)"
+        backdropFilter: "blur(5px)"
       }}
       position="sticky"
     >
