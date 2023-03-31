@@ -14,7 +14,7 @@ export default function AppBar(props) {
         backgroundColor: "transparent",
         backdropFilter: "blur(5px)"
       }}
-      position="sticky"
+      // position="sticky"
     >
       <Container maxWidth={"xl"}>
         <Toolbar disableGutters>

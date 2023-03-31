@@ -2,10 +2,12 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import Main from "@/components/Main";
-import { CssBaseline } from "@mui/material";
+import { Container, CssBaseline, useMediaQuery } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Intro from "@/components/Intro";
 import AppBar from "@/components/AppBar";
+
+import { useTheme } from "@mui/styles";
 const theme = createTheme({
   palette: {
     primary: {
@@ -37,8 +39,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <AppBar />
-      <Main />
-      <Intro />
+      <div
+        style={{
+          height: "100vh"
+        }}
+      >
+        <Main />
+        <Intro />
+      </div>
     </ThemeProvider>
   );
 }

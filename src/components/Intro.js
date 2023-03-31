@@ -1,17 +1,18 @@
-import { Container, Grid, Typography } from "@mui/material";
+import { Container, Grid, Typography, useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/styles";
+import Image from "next/image";
 import React from "react";
-
 export default function Intro(props) {
+  const theme = useTheme();
+  const smallScreen = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <Container
       maxWidth={false}
       style={{
-        width: "100vw",
-        height: "100vh",
-        scrollSnapAlign: "start",
         // backgroundColor: "#008080",
         backgroundColor: "rgb(22,28,36)",
-        display: "flex"
+        display: "flex",
+        height: "100vh"
       }}
     >
       <Grid
@@ -22,17 +23,31 @@ export default function Intro(props) {
         alignItems={"center"}
         spacing={2}
       >
-        <Grid item xs={6}></Grid>
-        <Grid item xs={6}>
+        {!smallScreen && (
+          <Grid item container xs={6} justifyContent="center">
+            <Image
+              src={"/Project-Website/audio_control.png"}
+              width={400}
+              height={150}
+            />
+          </Grid>
+        )}
+        <Grid item xs={12} md={6}>
           <Typography variant="h2" color="white">
-            1-click to open programs
+            Easily Control Your System
           </Typography>
-          <Typography variant="body2" color="white">
-            Tired of cluttered icons on your desktop?
-          </Typography>
-          <Typography variant="body2" color="white">
-            Had enough of the frustration of not being able to find your
-            programs?
+          <Typography color="secondary.dark" variant="body1">
+            Control your system from any device with a web browser. You can{" "}
+            <p1
+              style={{
+                background: "linear-gradient(45deg, #f6d365, #fda085);",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent"
+              }}
+            >
+              change the volume, shutdown / restart your PC,
+            </p1>{" "}
+            and more to come.
           </Typography>
         </Grid>
       </Grid>
