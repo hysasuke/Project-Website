@@ -1,38 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Project Hub
 
-## Getting Started
+## Description
 
-First, run the development server:
+Project Hub is a desktop application that enhances the functionality of your devices with a web browser. With a user-friendly interface and a wide range of features, Project Hub allows you to launch programs, open websites, and perform automation shortcuts with just a press of a button.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## Key Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Program shortcuts: Create, organize, and launch your programs with ease.
+- Bookmarks: Save your favorite websites and open them with a single click.
+- System control: Control volume, shutdown, restart, and more on your devices.
+- Automation: Create keyboard shortcuts to streamline your workflow.
+- More features coming soon!
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Installation
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+To install Project Hub, simply download the latest release from our [website](https://hysasuke.github.io/Project-Website/).
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Usage
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Once you have installed Project Hub, launch the app and access the web interface by going to `http://{{your-ip-address}}:9153` on any device with a web browser.
 
-## Learn More
+## Support
 
-To learn more about Next.js, take a look at the following resources:
+If you encounter any issues or have any questions about using Project Hub, please submit an issue on our [GitHub repository](https://github.com/hysasuke/Project-Hub/issues).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Project Hub is licensed under the MIT License. See LICENSE.md for more information.
