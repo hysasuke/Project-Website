@@ -19,7 +19,7 @@ export default function AppBar(props) {
       <Container maxWidth={"xl"}>
         <Toolbar disableGutters>
           <Image
-            src={"/Project-Website/logo.png"}
+            src={"/logo.png"}
             width={50}
             height={50}
             style={{ marginRight: 10 }}

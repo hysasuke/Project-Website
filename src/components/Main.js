@@ -95,7 +95,7 @@ export default function Main(props) {
             justifyContent="center"
           >
             <Image
-              src={"/Project-Website/main_hero.png"}
+              src={"/main_hero.png"}
               width={windowWidth / 3}
               height={windowWidth / 3 / 1.5869}
             />

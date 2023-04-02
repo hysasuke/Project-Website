@@ -32,7 +32,7 @@ export default function Intro(props) {
         {!smallScreen && (
           <Grid item container xs={6} justifyContent="center">
             <Image
-              src={"/Project-Website/system_control_intro.png"}
+              src={"/system_control_intro.png"}
               width={windowWidth / 3}
               height={(windowWidth / 3) * 0.6603}
             />
