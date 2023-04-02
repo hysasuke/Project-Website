@@ -80,21 +80,7 @@ export default function Main(props) {
                   variant="contained"
                   style={{ padding: 10 }}
                 >
-                  Download for Windows(64-bit)
-                </Button>
-              </Grid>
-              <Grid item>
-                <Button
-                  onClick={() => {
-                    window.open(
-                      "https://github.com/hysasuke/Project-Hub/releases/latest/download/ia32.zip"
-                    );
-                  }}
-                  color="secondary"
-                  variant="contained"
-                  style={{ padding: 10 }}
-                >
-                  Download for Windows(32-bit)
+                  Download for Windows
                 </Button>
               </Grid>
             </Grid>

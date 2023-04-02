@@ -1,10 +1,16 @@
 import { Container, Grid, Typography, useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/styles";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 export default function Intro(props) {
   const theme = useTheme();
   const smallScreen = useMediaQuery(theme.breakpoints.down("md"));
+  const [windowWidth, setWindowWidth] = React.useState(0);
+  const [windowHeight, setWindowHeight] = React.useState(0);
+  useEffect(() => {
+    setWindowWidth(window.innerWidth);
+    setWindowHeight(window.innerHeight);
+  }, []);
   return (
     <Container
       maxWidth={false}
@@ -26,9 +32,9 @@ export default function Intro(props) {
         {!smallScreen && (
           <Grid item container xs={6} justifyContent="center">
             <Image
-              src={"/Project-Website/audio_control.png"}
-              width={400}
-              height={150}
+              src={"/Project-Website/system_control_intro.png"}
+              width={windowWidth / 3}
+              height={(windowWidth / 3) * 0.6603}
             />
           </Grid>
         )}
