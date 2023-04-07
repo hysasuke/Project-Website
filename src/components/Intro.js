@@ -15,7 +15,6 @@ export default function Intro(props) {
     <Container
       maxWidth={false}
       style={{
-        // backgroundColor: "#008080",
         backgroundColor: "rgb(22,28,36)",
         display: "flex",
         height: "100vh"
@@ -24,7 +23,7 @@ export default function Intro(props) {
       <Grid
         container
         flex={1}
-        padding={10}
+        padding={smallScreen ? 0 : 10}
         justifyContent="space-between"
         alignItems={"center"}
         spacing={2}

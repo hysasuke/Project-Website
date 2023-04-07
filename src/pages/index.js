@@ -8,6 +8,7 @@ import Intro from "@/components/Intro";
 import AppBar from "@/components/AppBar";
 
 import { useTheme } from "@mui/styles";
+import KeypadIntro from "@/components/KeypadIntro";
 const theme = createTheme({
   palette: {
     primary: {
@@ -46,6 +47,7 @@ export default function Home() {
       >
         <Main />
         <Intro />
+        <KeypadIntro />
       </div>
     </ThemeProvider>
   );

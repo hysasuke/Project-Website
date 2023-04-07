@@ -31,7 +31,7 @@ export default function Main(props) {
         display: "flex"
       }}
     >
-      <Grid container flex={1} padding={10}>
+      <Grid container flex={1} padding={smallScreen ? 0 : 10}>
         <Grid
           xs={12}
           md={6}
