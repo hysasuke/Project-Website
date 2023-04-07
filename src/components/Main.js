@@ -9,16 +9,29 @@ import React, { useEffect } from "react";
 import AppBar from "./AppBar.js";
 import Image from "next/image";
 import { useTheme } from "@mui/styles";
+import { getLatestRelease } from "@/modules/GithubModule.js";
 
 export default function Main(props) {
   const theme = useTheme();
   const smallScreen = useMediaQuery(theme.breakpoints.down("md"));
   const [windowWidth, setWindowWidth] = React.useState(0);
   const [windowHeight, setWindowHeight] = React.useState(0);
+  const [latestRelease, setLatestRelease] = React.useState(null);
+  const [downloadUrl, setDownloadUrl] = React.useState("");
   useEffect(() => {
     setWindowWidth(window.innerWidth);
     setWindowHeight(window.innerHeight);
+    const _getLatestRelease = async () => {
+      const release = await getLatestRelease();
+      const exeAsset = release.assets.find((asset) => {
+        return asset.name.endsWith(".exe");
+      });
+      setDownloadUrl(exeAsset.browser_download_url);
+      setLatestRelease(release);
+    };
+    _getLatestRelease();
   }, []);
+
   return (
     <Container
       maxWidth={false}
@@ -72,9 +85,9 @@ export default function Main(props) {
               <Grid item>
                 <Button
                   onClick={() => {
-                    window.open(
-                      "https://github.com/hysasuke/Project-Hub/releases/latest/download/x64.zip"
-                    );
+                    if (downloadUrl.length > 0) {
+                      window.open(downloadUrl);
+                    }
                   }}
                   color="secondary"
                   variant="contained"
@@ -82,6 +95,14 @@ export default function Main(props) {
                 >
                   Download for Windows
                 </Button>
+                {latestRelease && (
+                  <Grid item>
+                    <Typography color="grey" variant="body2">
+                      Current Version:{" "}
+                      {latestRelease?.tag_name.replace("v", "")}
+                    </Typography>
+                  </Grid>
+                )}
               </Grid>
             </Grid>
           </Grid>
