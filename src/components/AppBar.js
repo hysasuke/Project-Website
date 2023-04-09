@@ -11,7 +11,7 @@ export default function AppBar(props) {
     <MUIAppBar
       style={{
         boxShadow: "none",
-        backgroundColor: "transparent",
+        backgroundColor: "rgba(22,28,36,0.5)",
         backdropFilter: "blur(5px)"
       }}
       // position="sticky"
