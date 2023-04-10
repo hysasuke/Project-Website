@@ -7,6 +7,7 @@ export default function Intro(props) {
   const smallScreen = useMediaQuery(theme.breakpoints.down("md"));
   const [windowWidth, setWindowWidth] = React.useState(0);
   const [windowHeight, setWindowHeight] = React.useState(0);
+
   useEffect(() => {
     setWindowWidth(window.innerWidth);
     setWindowHeight(window.innerHeight);

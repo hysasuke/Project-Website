@@ -18,7 +18,16 @@ export default function Main(props) {
   const [windowHeight, setWindowHeight] = React.useState(0);
   const [latestRelease, setLatestRelease] = React.useState(null);
   const [downloadUrl, setDownloadUrl] = React.useState("");
+  const [platform, setPlatform] = React.useState("");
   useEffect(() => {
+    const isMac = window.navigator.platform.toUpperCase().indexOf("MAC") >= 0;
+    const isWindows =
+      window.navigator.platform.toUpperCase().indexOf("WIN") >= 0;
+    if (isMac) {
+      setPlatform("Mac");
+    } else if (isWindows) {
+      setPlatform("Windows");
+    }
     setWindowWidth(window.innerWidth);
     setWindowHeight(window.innerHeight);
     const _getLatestRelease = async () => {
@@ -26,7 +35,15 @@ export default function Main(props) {
       const exeAsset = release.assets.find((asset) => {
         return asset.name.endsWith(".exe");
       });
-      setDownloadUrl(exeAsset.browser_download_url);
+      const dmgAsset = release.assets.find((asset) => {
+        return asset.name.endsWith(".dmg");
+      });
+      if (isMac) {
+        setDownloadUrl(dmgAsset.browser_download_url);
+      } else if (isWindows) {
+        setDownloadUrl(exeAsset.browser_download_url);
+      }
+
       setLatestRelease(release);
     };
     _getLatestRelease();
@@ -81,30 +98,35 @@ export default function Main(props) {
                 bring you the best experience possible. Stay tuned for updates!
               </Typography>
             </Grid>
-            <Grid item container wrap="wrap" spacing={1} marginTop={2}>
-              <Grid item>
-                <Button
-                  onClick={() => {
-                    if (downloadUrl.length > 0) {
-                      window.open(downloadUrl);
-                    }
-                  }}
-                  color="secondary"
-                  variant="contained"
-                  style={{ padding: 10 }}
-                >
-                  Download for Windows
-                </Button>
-                {latestRelease && (
-                  <Grid item>
-                    <Typography color="grey" variant="body2">
-                      Current Version:{" "}
-                      {latestRelease?.tag_name.replace("v", "")}
-                    </Typography>
-                  </Grid>
-                )}
+            {(platform === "Mac" || platform === "Windows") && (
+              <Grid item container wrap="wrap" spacing={1} marginTop={2}>
+                <Grid item>
+                  <Button
+                    onClick={() => {
+                      if (downloadUrl.length > 0) {
+                        window.open(downloadUrl);
+                      }
+                    }}
+                    color="secondary"
+                    variant="contained"
+                    style={{ padding: 10 }}
+                  >
+                    Download for{" "}
+                    {platform === "Mac"
+                      ? "Mac"
+                      : platform === "Windows" && "Windows"}
+                  </Button>
+                  {latestRelease && (
+                    <Grid item>
+                      <Typography color="grey" variant="body2">
+                        Current Version:{" "}
+                        {latestRelease?.tag_name.replace("v", "")}
+                      </Typography>
+                    </Grid>
+                  )}
+                </Grid>
               </Grid>
-            </Grid>
+            )}
           </Grid>
         </Grid>
         {!smallScreen && (
