@@ -55,6 +55,9 @@ export default function Intro(props) {
             </p1>{" "}
             and more to come.
           </Typography>
+          <Typography color="gray" variant="body2">
+            Note: Not all features are available on all platforms.
+          </Typography>
         </Grid>
       </Grid>
     </Container>

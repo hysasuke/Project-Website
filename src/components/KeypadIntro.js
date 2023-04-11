@@ -43,7 +43,7 @@ export default function KeypadIntro(props) {
           justifyContent="center"
           alignItems={"center"}
         >
-          <Grid item xs={12} md={9} lg={4} height={500}>
+          <Grid item xs={12} md={9} lg={4} height={500} minWidth={350}>
             <Keypad />
           </Grid>
         </Grid>
