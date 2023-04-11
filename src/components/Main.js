@@ -157,8 +157,8 @@ export default function Main(props) {
           <Grid item>
             <Grid item wrap="wrap">
               <Typography color="secondary" variant="h2">
-                Control Your {platform} From Any Device
-              </Typography>
+                Control Your {platform === "Mac" ? "Mac" : "PC"} From Any Device
+              </Typography> 
             </Grid>
             <Grid item container wrap="wrap" marginTop={2}>
               <Typography color="secondary" variant="h4">
