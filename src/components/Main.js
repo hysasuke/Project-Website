@@ -10,6 +10,7 @@ import AppBar from "./AppBar.js";
 import Image from "next/image";
 import { useTheme } from "@mui/styles";
 import { getLatestRelease } from "@/modules/GithubModule.js";
+import PaypalDonateButton from "./PaypalDonateButton.js";
 export default function Main(props) {
   const theme = useTheme();
   const smallScreen = useMediaQuery(theme.breakpoints.down("md"));
@@ -104,7 +105,7 @@ export default function Main(props) {
                 Download for Mac (Apple Silicon)
               </Button>
             </Grid>
-            <Grid item>
+            {/* <Grid item>
               <Button
                 onClick={() => {
                   if (downloadUrl.length > 0) {
@@ -118,7 +119,7 @@ export default function Main(props) {
               >
                 Download for Mac (Intel)
               </Button>
-            </Grid>
+            </Grid> */}
           </Grid>
           {latestRelease && (
             <Grid item>
@@ -158,7 +159,7 @@ export default function Main(props) {
             <Grid item wrap="wrap">
               <Typography color="secondary" variant="h2">
                 Control Your {platform === "Mac" ? "Mac" : "PC"} From Any Device
-              </Typography> 
+              </Typography>
             </Grid>
             <Grid item container wrap="wrap" marginTop={2}>
               <Typography color="secondary" variant="h4">

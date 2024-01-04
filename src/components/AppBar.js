@@ -6,6 +6,9 @@ import {
   Typography
 } from "@mui/material";
 import Image from "next/image";
+import PaypalDonateButton from "./PaypalDonateButton";
+import PatreonButton from "./PatreonButton";
+import GithubButton from "./GithubButton";
 export default function AppBar(props) {
   return (
     <MUIAppBar
@@ -24,9 +27,17 @@ export default function AppBar(props) {
             height={50}
             style={{ marginRight: 10 }}
           />
-          <Typography variant="h6" noWrap color="secondary">
+          <Typography
+            variant="h6"
+            noWrap
+            color="secondary"
+            sx={{ flexGrow: 1 }}
+          >
             Project Hub
           </Typography>
+          <PaypalDonateButton />
+          <PatreonButton />
+          <GithubButton />
         </Toolbar>
       </Container>
     </MUIAppBar>

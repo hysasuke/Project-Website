@@ -9,6 +9,7 @@ import AppBar from "@/components/AppBar";
 
 import { useTheme } from "@mui/styles";
 import KeypadIntro from "@/components/KeypadIntro";
+import Script from "next/script";
 const theme = createTheme({
   palette: {
     primary: {
@@ -24,6 +25,24 @@ const theme = createTheme({
       main: "#2196f3",
       light: "#64b5f6",
       dark: "#1976d2",
+      contrastText: "#FFFFFF"
+    },
+    donation: {
+      main: "#FFC107",
+      light: "#FFD54F",
+      dark: "#FFA000",
+      contrastText: "#000000"
+    },
+    patreon: {
+      main: "#ffffff",
+      light: "#ffffff",
+      dark: "#ffffff",
+      contrastText: "#FFFFFF"
+    },
+    github: {
+      main: "#000000",
+      light: "#000000",
+      dark: "#000000",
       contrastText: "#FFFFFF"
     }
   }
@@ -49,6 +68,7 @@ export default function Home() {
         <Intro />
         <KeypadIntro />
       </div>
+      <Script src="https://buttons.github.io/buttons.js"></Script>
     </ThemeProvider>
   );
 }
