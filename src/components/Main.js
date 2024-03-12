@@ -42,13 +42,9 @@ export default function Main(props) {
       const dmgArm64Asset = release.assets.find((asset) => {
         return asset.name.endsWith(".dmg") && asset.name.includes("arm64");
       });
-
-      if (isMac) {
-        setDownloadUrl(dmgX64Asset.browser_download_url);
-        setArm64DownloadUrl(dmgArm64Asset.browser_download_url);
-      } else if (isWindows) {
-        setDownloadUrl(exeAsset.browser_download_url);
-      }
+      // setDownloadUrl(dmgX64Asset.browser_download_url);
+      setArm64DownloadUrl(dmgArm64Asset.browser_download_url);
+      setDownloadUrl(exeAsset.browser_download_url);
 
       setLatestRelease(release);
     };
@@ -90,7 +86,7 @@ export default function Main(props) {
             <Grid item>
               <Button
                 onClick={() => {
-                  if (downloadUrl.length > 0) {
+                  if (arm64DownloadUrl.length > 0) {
                     window.open(arm64DownloadUrl);
                   }
                 }}
